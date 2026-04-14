@@ -29,13 +29,17 @@ Built with React + TypeScript + Vite.
 - src/hooks/usePermissions.ts
 - src/hooks/useRoleRoute.ts
 - src/components/ProtectedSection.tsx
+- src/pages/Dashboard.tsx
+- src/pages/PeopleRecords.tsx (placeholder)
+- src/pages/AdminReports.tsx (complete - mock data)
+- src/pages/StudentPortal.tsx (placeholder)
 
 ## Up Next
-- App.tsx (routing between all 4 screens)
-- src/pages/Dashboard.tsx
-- src/pages/PeopleRecords.tsx
-- src/pages/AdminReports.tsx
-- src/pages/StudentPortal.tsx
+- Build out StudentPortal.tsx (classes, grades, assignments, attendance)
+- Build out PeopleRecords.tsx (student/teacher list with master-detail panel)
+- Build out AdminReports.tsx (enrollment, scheduling, reports)
+- Build real Login page with proper form
+- Add navigation sidebar
 
 ## Name Research
 Checked and cleared: Orbis (no conflicts in education software space)
