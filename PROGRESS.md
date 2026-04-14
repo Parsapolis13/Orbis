@@ -24,20 +24,24 @@ Built with React + TypeScript + Vite.
 ## Files Completed
 - .gitignore
 - PROGRESS.md
+- src/types/roles.ts
+- src/context/AuthContext.tsx
+- src/hooks/usePermissions.ts
+- src/hooks/useRoleRoute.ts
+- src/components/ProtectedSection.tsx
 
-## Files In Progress
-- src/types/roles.ts (written in chat, not yet pasted)
-- src/context/AuthContext.tsx (written in chat, not yet pasted)
-- src/hooks/usePermissions.ts (written in chat, not yet pasted)
-- src/hooks/useRoleRoute.ts (written in chat, not yet pasted)
-- src/components/ProtectedSection.tsx (written in chat, not yet pasted)
-
-## Pending
-- App.tsx (routing)
-- Dashboard.tsx
-- PeopleRecords.tsx
-- AdminReports.tsx
-- StudentPortal.tsx
+## Up Next
+- App.tsx (routing between all 4 screens)
+- src/pages/Dashboard.tsx
+- src/pages/PeopleRecords.tsx
+- src/pages/AdminReports.tsx
+- src/pages/StudentPortal.tsx
 
 ## Name Research
 Checked and cleared: Orbis (no conflicts in education software space)
+
+## Laws & Compliance Notes
+- FERPA (US): protects student education records — must not share without authorization
+- COPPA: applies if any students are under 13
+- Frontend permission checks are UX only — backend must enforce independently
+- Audit logging required before connecting real student data
