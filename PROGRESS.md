@@ -21,13 +21,21 @@ Built with React + TypeScript + Vite.
 - Multi-role support: users can have more than one role simultaneously
 - Role priority order: admin > teacher > admissions > parent > student
 - Color scheme: Navy blue (#1e3a5f) primary, white cards, light gray backgrounds
+- Class structure: subjects with grade-level sections, expandable card UI
 
 ## Roles & Access
-- admin: Admin & Reports (enrollment, scheduling, reports, tuition)
-- teacher: Dashboard, People & Records
+- admin: Admin & Reports, all classes, gradebook, people, assignments
+- teacher: Dashboard, My Classes, Gradebook, Assignments, People & Records
 - admissions: Admissions page
-- parent: Parent Portal (read-only view of their child's data)
+- parent: Parent Portal (child's grades + class newsletters)
 - student: Student Portal (own grades, classes, assignments, attendance)
+
+## School Structure
+- K-8 same teacher: Art, Music, Makers, PE
+- K-8 split teacher (K-5 / 6-8): Science, French
+- K-5 only: Homeroom
+- 6-8 only: Academic Workshop, Advisory, Math (Pre-Alg/Algebra/Geometry), English, History, Latin
+- 6-8 Electives: Debate, CS (fixed for now, changes yearly)
 
 ## Files Completed
 - .gitignore
@@ -38,29 +46,31 @@ Built with React + TypeScript + Vite.
 - src/hooks/usePermissions.ts (multi-role support)
 - src/hooks/useRoleRoute.ts (priority-based role routing)
 - src/components/ProtectedSection.tsx
-- src/components/Sidebar.tsx (styled with Tailwind - navy theme)
-- src/pages/Login.tsx (Google OAuth + styled with Tailwind)
+- src/components/Sidebar.tsx (styled - navy theme)
+- src/pages/Login.tsx (Google OAuth + styled)
+- src/pages/Classes.tsx (mock data, expandable subject cards)
+- src/pages/ClassHomepage.tsx (mock data, tabbed: home/resources/grades)
+- src/pages/Gradebook.tsx (mock data, editable grade grid)
+- src/pages/Assignments.tsx (mock data, create new assignments)
 - src/pages/Dashboard.tsx (logic complete, styling pending)
 - src/pages/AdminReports.tsx (mock data, styling pending)
 - src/pages/StudentPortal.tsx (mock data, styling pending)
 - src/pages/PeopleRecords.tsx (mock data, master-detail, styling pending)
 
 ## Up Next
-1. Style Dashboard.tsx
-2. Style StudentPortal.tsx
-3. Style PeopleRecords.tsx
-4. Style AdminReports.tsx
-5. Build Parent Portal page (content TBD)
-6. Build Admissions page (content TBD)
-7. Add Tuition feature to Admin & Reports (content TBD)
-8. Backend: Supabase setup (database, real auth, role assignment)
-9. Replace all mock data with real Supabase data
-10. Audit logging (required before connecting real student data)
+1. Build Parent Portal page (child grades + newsletters)
+2. Build Admissions page (content TBD)
+3. Add Tuition feature to Admin & Reports (content TBD)
+4. Style Dashboard, StudentPortal, PeopleRecords, AdminReports
+5. Backend: Supabase setup
+6. Replace all mock data with real Supabase data
+7. Audit logging (FERPA compliance)
 
-## Planned Pages (content TBD)
-- Parent Portal (role: parent — read-only view of child's data)
-- Admissions page (role: admissions already created)
-- Tuition feature (inside Admin & Reports or separate page)
+## Planned Features
+- Assignment submission (future)
+- Role priority customizable by admin (future)
+- Additional languages beyond French (future)
+- Electives update yearly via admin panel (future)
 
 ## Google OAuth Setup
 - Google Cloud project: Orbis
@@ -68,7 +78,7 @@ Built with React + TypeScript + Vite.
 - Client ID: stored in .env as VITE_GOOGLE_CLIENT_ID
 - Authorized JavaScript origins: http://localhost:5173
 - Authorized redirect URIs: http://localhost:5173/login
-- JSON credentials: downloaded and stored safely outside project folder
+- JSON credentials: downloaded safely outside project folder
 
 ## Name
 - Orbis (Latin: "world / circle")
@@ -90,11 +100,11 @@ Built with React + TypeScript + Vite.
 - Replace mock data with real database tables
 - Enforce permissions server-side
 - Audit logging for FERPA compliance
-- Role priority order will be configurable by admins (future feature)
+- Role priority order configurable by admins (future)
 
 ## Styling
 - Framework: Tailwind CSS
-- Primary color: Navy #1e3a5f
+- Primary: Navy #1e3a5f
 - Accent: Blue #2563eb
 - Background: Light gray #f8fafc
 - Card: White #ffffff
